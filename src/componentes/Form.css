@@ -1,0 +1,37 @@
+.submitButton,
+.resultContainer > div > a {
+  background: #ff5043;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color ease-in 0.2s;
+}
+
+.searchInputContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.searchInput {
+  padding: calc(0.75rem - 1px);
+  border-radius: 0.5rem;
+  border: 1px solid lightgray;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.submitButton:hover {
+  background-color: rgba(255, 80, 67, 0.75);
+}

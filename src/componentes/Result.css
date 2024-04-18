@@ -1,0 +1,49 @@
+.registrobr:hover {
+  background-color: rgba(255, 80, 67, 0.75);
+}
+
+.resultContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  height: 100%;
+  flex-direction: column;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 3rem;
+  text-wrap: wrap;
+  max-width: 380px;
+  word-break: break-all;
+  text-align: center;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+@media (max-width: 840px) {
+  .title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 440px) {
+    .info {
+      gap: 1.5rem;
+    }
+  }
