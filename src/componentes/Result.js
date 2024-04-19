@@ -25,16 +25,21 @@ function Result({ lista }) {
 
   return (
     <div className="resultContainer">
-      {lista.reverse().map((item) => {
+      {lista.map((item) => (
         <div className="result">
           <p className="title">{item.fqdn}</p>
           <div className="info">
             <p>Status <br />{formatStatus(item.status)}</p>
             <p>Expira em <br />{formatData(item)}</p>
           </div>
-          <a className="registrobr" href='https://registro.br/busca-dominio/?fqdn=${item.fqdn}' target="_blank"> registro.br </a>
-        </div>;
-      })}
+          <a className="registrobr" 
+            href={`https://registro.br/busca-dominio/?fqdn=${item.fqdn}`} 
+            rel="noopener noreferrer" 
+            target="_blank"> 
+            registro.br 
+          </a>
+        </div>
+      ))}
     </div>
   );
 }
