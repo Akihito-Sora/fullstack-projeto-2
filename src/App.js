@@ -1,28 +1,41 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Form from "./componentes/Form";
 import Result from "./componentes/Result";
 
 function App() {
   const [listaDominio, setListaDominio] = useState([]);
-  
+  /*
+  useEffect(() => {
+    async function fetchData(domain){
+      await fetch(`https://brasilapi.com.br/api/registrobr/v1/${domain}`)
+        .then((response) => response.json())
+        .then((data) =>
+          setListaDominio((prevList) => [...prevList, data].reverse())
+        )
+        .catch((error) => console.log(error));
+    }
+  async function consultar(event) {
+    event.preventDefault();
+    const domain = event.target.domainInput.value;
+    await fetchData(domain);
+  }
+    consultar();
+  }, []);
+*/
+
   async function consultar(event) {
     event.preventDefault();
 
-    const domain = event.target.domainInput.value
-    const response = await fetch(
-      `https://brasilapi.com.br/api/registrobr/v1/${domain}`
-    )
-    const data = await response.json();
-    setListaDominio(prevList => [...prevList, data].reverse())
-    /*
-    .then((response) => response.json())
-    .then((data) => setListaDominio(prevList => [...prevList, data].reverse()))
-    .catch((error) => console.log(error));*/
-    console.log(listaDominio)
+    const domain = event.target.domainInput.value.replace(/\s/g, "");
+    await fetch(`https://brasilapi.com.br/api/registrobr/v1/${domain}`)
+      .then((response) => response.json())
+      .then((data) =>
+        setListaDominio((prevList) => [...prevList, data].reverse())
+      )
+      .catch((error) => console.log(error));
   }
 
- 
   return (
     <main className="App">
       <aside className="infosAside">
@@ -36,9 +49,9 @@ function App() {
             suas informações
           </p>
         </section>
-        <Form texto={consultar}/> 
+        <Form texto={consultar} />
       </aside>
-      <Result lista={listaDominio}/>
+      <Result lista={listaDominio} />
     </main>
   );
 }

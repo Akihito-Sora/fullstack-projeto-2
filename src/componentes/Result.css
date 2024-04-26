@@ -36,6 +36,15 @@
   gap: 2rem;
 }
 
+.infoTitle {
+  text-align: center;
+  font-weight: 600;
+}
+
+.center {
+  text-align: center;
+}
+
 @media (max-width: 840px) {
   .title {
     font-size: 2rem;

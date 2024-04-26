@@ -1,7 +1,7 @@
-.submitButton,
-.resultContainer > div > a {
+.submitButton {
   background: #ff5043;
   color: white;
+ height: 40px;
   padding: 0.75rem;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -23,6 +23,10 @@
 .inputContainer {
   display: flex;
   flex-direction: column;
+}
+.alert {
+  color:#ff5043;
+  font-size: 14px
 }
 
 .searchContainer {
